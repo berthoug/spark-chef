@@ -154,3 +154,7 @@ attribute "hadoop_spark/databricks_delta_version",
 attribute "hadoop_spark/url",
           :description => "the url for downloading the spark tgz",
           :type => "string"
+
+attribute "hadoop_spark/sufix",
+          :description => "the sufix of the folder in which spark will be untared, this is needed if you are pointing hadoop_spark/url to a tar.gz that does not have the expected -bin-without-hadoop-with-hive-with-r.tar.gz name",
+          :type => "string"
