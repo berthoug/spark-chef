@@ -11,11 +11,11 @@ default['hadoop_spark']['version']                              = "2.4.3.1"
 default['scala']['version'] 	                                = "2.11"
 default['hadoop_spark']['dir']                                  = node['install']['dir'].empty? ? "/srv/hops" : node['install']['dir']
 default['hadoop_spark']['base_dir']                             = "#{node['hadoop_spark']['dir']}/spark"
-default['hadoop_spark']['sufix']                                = "-bin-without-hadoop-with-hive-with-r"
+default['hadoop_spark']['sufix']                                = "-bin-without-hadoop-with-hive-with-r-for-3.2.0.0"
 default['hadoop_spark']['home']                                 = "#{node['hadoop_spark']['dir']}/spark-#{node['hadoop_spark']['version']}#{node['hadoop_spark']['sufix']}"
 default['hadoop_spark']['conf_dir']                             = "#{node['hadoop_spark']['base_dir']}/conf"
 default['hadoop_spark']['hopsworks_jars']                       = "#{node['hadoop_spark']['base_dir']}/hopsworks-jars"
-default['hadoop_spark']['url']                                  = "#{node['download_url']}/spark-#{node['hadoop_spark']['version']}-bin-without-hadoop-with-hive-with-r.tgz"
+default['hadoop_spark']['url']                                  = "#{node['download_url']}/spark-#{node['hadoop_spark']['version']}-bin-without-hadoop-with-hive-with-r-for-3.2.0.0.tgz"
 
 default['hadoop_spark']['spark_sql_dependencies_url']           = "#{node['download_url']}/spark-sql-dependencies"
 default['hadoop_spark']['parquet_version']                      = "1.10.0"
@@ -126,7 +126,7 @@ default['hadoop_spark']['mysql_driver']                                  = "#{no
 # Hudi Dependencies
 #
 default['hadoop_spark']['databricks_spark_avro_version']                 = "2.11-4.0.0"
-default['hadoop_spark']['hudi_bundle_url']                               = "#{node['download_url']}/hudi/#{node['hive2']['hudi_version']}/hudi-spark-bundle-#{node['hive2']['hudi_version']}.jar"
+default['hadoop_spark']['hudi_bundle_url']                               = "#{node['download_url']}/hudi/#{node['hops']['version']}/#{node['hive2']['hudi_version']}/hudi-spark-bundle-#{node['hive2']['hudi_version']}.jar"
 
 #
 # Delta
